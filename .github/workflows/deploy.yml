@@ -1,6 +1,6 @@
 name: Deploy Hello World
 
-on:
+"on":
   push:
     branches:
       - main
@@ -19,16 +19,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload website
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: '.'
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
